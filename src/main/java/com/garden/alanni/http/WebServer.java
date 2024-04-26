@@ -18,7 +18,6 @@ public class WebServer {
             System.out.println("----接收到客户端请求-------");
             OutputStream outputStream = socket.getOutputStream();
             PrintStream printStream = new PrintStream(outputStream);
-            Thread.sleep(2000);
             printStream.println("服务器响应在此！");
             printStream.close();
             socket.close();
