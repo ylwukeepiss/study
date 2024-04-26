@@ -18,6 +18,8 @@ public class WebServer {
             System.out.println("----接收到客户端请求-------");
             OutputStream outputStream = socket.getOutputStream();
             PrintStream printStream = new PrintStream(outputStream);
+            // 模拟客户端读取超时
+            Thread.sleep(5000);
             printStream.println("服务器响应在此！");
             printStream.close();
             socket.close();
