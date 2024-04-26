@@ -1,0 +1,30 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/test
+        username: wuyulun
+        password: wuyulun
+    redis:
+        host: localhost
+        port: 6379
+server:
+    port: 8081
+
+spring.security.user.name: root
+spring.security.user.password: root
+
+xxl:
+    job:
+        admin:
+            addresses: http://127.0.0.1:8080/xxl-job-admin
+### xxl-job executor address
+        executor:
+            appname: xxl-job-executor-sample
+            ip:
+            port: 9999
+### xxl-job, access token
+        accessToken:
+### xxl-job log path
+            logpath: /Users/wuyulun/log/applogs/xxl-job/jobhandler
+### xxl-job log retention days
+            logretentiondays: -1
