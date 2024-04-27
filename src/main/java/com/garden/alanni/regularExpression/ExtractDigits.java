@@ -40,13 +40,10 @@ public class ExtractDigits {
         // 启动并发测试
         List<String> digits = Arrays.asList(digit1, digit2, digit3, digit4);
         for (String digit : digits) {
-            Runnable runnable = new Runnable() {
-                @Override
-                public void run() {
-                    Matcher matcher = EXTRACT_DIGITS.matcher(digit);
-                    if (matcher.find()) {
-                        System.out.println("concurrency ： " + matcher.group(1));
-                    }
+            Runnable runnable = () -> {
+                Matcher matcher1 = EXTRACT_DIGITS.matcher(digit);
+                if (matcher1.find()) {
+                    System.out.println("concurrency ： " + matcher1.group(1));
                 }
             };
             runnable.run();
