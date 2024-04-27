@@ -11,10 +11,13 @@ import java.net.Socket;
  */
 public class SimulateReadTimeout {
     public static void main(String[] args) throws IOException {
+        // 2024-04-27 服务端接收到客户端请求后 输出数据前  sleep timed > socket timed out 会抛出read timed out exception
+        // 这说明 read timed out 指的是 一次http交互中 数据的读写需在 socket timed out 内完成
+        // timed - 定时
         String host = "127.0.0.1";
         int port = 8080;
         Socket socket = new Socket(host, port);
-        socket.setSoTimeout(1000);
+        socket.setSoTimeout(3000);
         InputStream inputStream = socket.getInputStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         String res = reader.readLine();
