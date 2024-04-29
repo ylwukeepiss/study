@@ -1,4 +1,4 @@
-package com.garden.alanni.http;
+package com.garden.alanni.network;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -9,7 +9,7 @@ import java.net.Socket;
 /**
  * @author 吴宇伦
  */
-public class WebServer {
+public class HttpServer {
     public static void main(String[] args) throws IOException, InterruptedException {
         int port = 8080;
         ServerSocket serverSocket = new ServerSocket(port);
