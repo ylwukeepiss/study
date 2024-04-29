@@ -1,4 +1,4 @@
-package com.garden.alanni.io;
+package com.garden.alanni.network.io;
 
 import org.springframework.boot.web.embedded.netty.NettyWebServer;
 
