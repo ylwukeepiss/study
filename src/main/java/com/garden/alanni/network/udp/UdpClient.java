@@ -16,7 +16,8 @@ public class UdpClient {
     public static void main(String[] args) throws IOException {
         String targetUpdHost = "localhost";
         int targetUdpPort = 8088;
-        DatagramSocket datagramSocket = new DatagramSocket();
+        int sourceUdpPort = 8090;
+        DatagramSocket datagramSocket = new DatagramSocket(sourceUdpPort);
         while (true) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             String message = bufferedReader.readLine();
