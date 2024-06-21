@@ -51,15 +51,14 @@ public class FalseSharing implements Runnable {
     }
 
     public final static class VolatileLong {
-        public volatile long value = 0L;
-        public long[] a = new long[6]; // 注释
+        protected long p1,p2,p3,p4,p5,p6,p7;
+        protected volatile long value = 0L;
+        protected long p8,p9,p10,p11,p12,p13,p14,p15,p16;
     }
 
     public static long preventFromOptimization(VolatileLong v) {
         long i = 0;
-        for (long l : v.a) {
-            i += l;
-        }
+        i = i + v.p1 + v.p2 + v.p3 + v.p4 + v.p5 + v.p6 + v.p7 + v.p8 + v.p9 + v.p10 + v.p11 + v.p12 + v.p13 + v.p14 + v.p15 + v.p16;
         return i;
     }
 }
